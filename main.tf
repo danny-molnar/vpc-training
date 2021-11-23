@@ -98,7 +98,7 @@ resource "aws_nat_gateway" "NAT-gateway-a" {
 
   # To ensure proper ordering, it is recommended to add an explicit dependency
   # on the Internet Gateway for the VPC.
-  depends_on = [aws_nat_gateway.NAT-gateway-a]
+  depends_on = [aws_internet_gateway.internet-gateway]
 }
 
 resource "aws_nat_gateway" "NAT-gateway-b" {
@@ -110,7 +110,7 @@ resource "aws_nat_gateway" "NAT-gateway-b" {
 
   # To ensure proper ordering, it is recommended to add an explicit dependency
   # on the Internet Gateway for the VPC.
-  depends_on = [aws_nat_gateway.NAT-gateway-b]
+  depends_on = [aws_internet_gateway.internet-gateway]
 }
 
 resource "aws_nat_gateway" "NAT-gateway-c" {
@@ -122,6 +122,6 @@ resource "aws_nat_gateway" "NAT-gateway-c" {
 
   # To ensure proper ordering, it is recommended to add an explicit dependency
   # on the Internet Gateway for the VPC.
-  depends_on = [aws_nat_gateway.NAT-gateway-c]
+  depends_on = [aws_internet_gateway.internet-gateway]
 }
 
