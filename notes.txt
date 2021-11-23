@@ -1,0 +1,25 @@
+Okay, this is the notes on what we'll be doing.
+
+1. Create backend.tf
+2. Create provider.tf
+3. $ terraform init
+4. $ terraform plan (this one is going to say no changes)
+5. Create main.vpc - based on the Architecture Diagram
+6. $ terraform plan
+7. $ terraform apply
+
+NOTE: every project has to have its own unique key in the backend.tf. This is going to be a folder structure in the bucket, that we have specified.
+BTW: the tfstates file has to be stored in the cloud, so it is considered bad practice if it is stored locally. 
+
+8. Adding Internet Gateway to main.tf
+9. $ terraform plan
+10. $ terraform apply 
+
+11. Adding subnets to main.tf
+12. Adding variables in variables.tf and terraform.tfvars. Check those files for usage.
+
+13. Adding the rest of the subnets as per Architecture Diagram.
+
+14. Defining AZs main.tf
+15. Adding NATs to main.tf
+
