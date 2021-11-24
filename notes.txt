@@ -26,3 +26,11 @@ BTW: the tfstates file has to be stored in the cloud, so it is considered bad pr
 16. Creating new file with route table(s) - route_table.tf
 
 17. Adding nat gw route table to route_table.tf
+
+18. Adding ec2.tf with the EC2 instance and security group
+    EC2 instance info was looked up in the console, by AMI. Look for the latest AMI and copy/paste the AMI name/ID
+
+    
+
+
+
