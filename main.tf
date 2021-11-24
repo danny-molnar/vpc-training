@@ -124,4 +124,3 @@ resource "aws_nat_gateway" "NAT-gateway-c" {
   # on the Internet Gateway for the VPC.
   depends_on = [aws_internet_gateway.internet-gateway]
 }
-

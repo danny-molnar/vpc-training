@@ -23,3 +23,6 @@ BTW: the tfstates file has to be stored in the cloud, so it is considered bad pr
 14. Defining AZs main.tf
 15. Adding NATs to main.tf
 
+16. Creating new file with route table(s) - route_table.tf
+
+17. Adding nat gw route table to route_table.tf
