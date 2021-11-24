@@ -1,43 +1,38 @@
-# Internet gateway - route table
-
-resource "aws_route_table" "igw_route_table" {
+# INTERNET GATEWAY - ROUTE TABLE
+resource "aws_route_table" "public_to_internet_rt" {
   vpc_id = aws_vpc.main_vpc.id
 
   route {
     cidr_block = "0.0.0.0/0"
-    gateway_id = aws_internet_gateway.internet-gateway.id
+    gateway_id = aws_internet_gateway.internet_gateway.id
   }
-
 
   tags = {
     Name = "internet-gateway-route-table"
   }
 }
 
-# NAT gateway - route table
-
 resource "aws_route_table" "private_to_public_subnet_rt" {
   vpc_id = aws_vpc.main_vpc.id
 
   route {
     cidr_block = "0.0.0.0/0"
-    nat_gateway_id = aws_nat_gateway.NAT-gateway-a.id
+    nat_gateway_id = aws_nat_gateway.nat_a.id
   }
-
 
   tags = {
-    Name = "private-to_public"
+    Name = "private-to-public"
   }
 }
 
-# Route table association to subnet pulic a
+# ASSOCIATION TO SUBNET PUBLIC A
 resource "aws_route_table_association" "igw_for_public_a" {
-  subnet_id      = aws_subnet.public-subnet-a.id
-  route_table_id = aws_route_table.igw_route_table.id
+  subnet_id      = aws_subnet.public_a.id
+  route_table_id = aws_route_table.public_to_internet_rt.id
 }
 
-# Route table association to subnet private a
-resource "aws_route_table_association" "private_rt_for_private_a" {
-  subnet_id      = aws_subnet.private-subnet-a.id
+# ASSOCIATION TO SUBNET PRIVATE A
+resource "aws_route_table_association" "private_rt_for_public_a" {
+  subnet_id      = aws_subnet.private_a.id
   route_table_id = aws_route_table.private_to_public_subnet_rt.id
 }

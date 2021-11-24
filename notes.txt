@@ -30,7 +30,9 @@ BTW: the tfstates file has to be stored in the cloud, so it is considered bad pr
 18. Adding ec2.tf with the EC2 instance and security group
     EC2 instance info was looked up in the console, by AMI. Look for the latest AMI and copy/paste the AMI name/ID
 
-    
+19. Checking out https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance for the data source addition.
+
+
 
 
 
