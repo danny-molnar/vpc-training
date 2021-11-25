@@ -32,7 +32,7 @@ BTW: the tfstates file has to be stored in the cloud, so it is considered bad pr
 
 19. Checking out https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance for the data source addition.
 
-
+20. scp-ing the private key ta-lab-key.pem to 
 
 
 
